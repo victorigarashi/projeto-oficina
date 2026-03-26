@@ -28,7 +28,7 @@ async def get_cliente_by_id(cliente_id: int, db: AsyncSession = Depends(get_sess
     
     if not cliente:
         raise HTTPException(
-            status_code=404,
+            status_code=status.HTTP_404_NOT_FOUND,
             detail="Cliente não encontrado")
     
     return cliente
@@ -41,7 +41,7 @@ async def get_cliente_by_nome(nome: str, db: AsyncSession = Depends(get_session)
     
     if not cliente:
         raise HTTPException(
-            status_code=404,
+            status_code=status.HTTP_404_NOT_FOUND,
             detail="Cliente não encontrado")
     
     return cliente
@@ -56,7 +56,7 @@ async def put_cliente(cliente_id: int, dados: ClienteUpdate, db: AsyncSession = 
 
     if not cliente:
         raise HTTPException(
-            status_code=404,
+            status_code=status.HTTP_404_NOT_FOUND,
             detail="Cliente não encontrado"
         )
 
@@ -69,7 +69,7 @@ async def delete_cliente(cliente_id: int, db: AsyncSession = Depends(get_session
 
     if not sucesso:
         raise HTTPException(
-            status_code=404,
+            status_code=status.HTTP_404_NOT_FOUND,
             detail="Cliente não encontrado"
         )
 
