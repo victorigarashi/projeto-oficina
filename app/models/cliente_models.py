@@ -13,6 +13,3 @@ class ClienteModel(SQLModel, table=True):
     cpf: str = Field(unique=True, min_length=11, max_length=11,)
     email: Optional[EmailStr] = None
     cidade: Optional[str] = None
-    
-    
-    agendamentos: list["AgendamentoModel"] = Relationship(back_populates="servico")

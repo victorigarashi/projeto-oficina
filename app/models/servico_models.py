@@ -1,4 +1,3 @@
-from __future__ import annotations
 from sqlmodel import Field, SQLModel, Relationship
 from decimal import Decimal
 from typing import Optional
@@ -19,4 +18,3 @@ class ServicoModel(SQLModel, table=True):
     categoria: Optional[str] = Field(default=None)
     codigo: Optional[str] = Field(default=None, index=True, unique=True)
     
-    agendamentos: list["AgendamentoModel"] = Relationship(back_populates="servico")

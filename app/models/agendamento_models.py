@@ -12,9 +12,3 @@ class AgendamentoModel(SQLModel, table=True):
     data_hora: datetime
     descricao: Optional[str] = None
     valor: Decimal
-    
-    cliente_id: int = Field(foreign_key="clientes.id")
-    servico_id: int = Field(foreign_key="servicos.id")
-
-    cliente: Optional["ClienteModel"] = Relationship(back_populates="agendamentos")
-    servico: Optional["ServicoModel"] = Relationship(back_populates="agendamentos")
