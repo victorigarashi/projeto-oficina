@@ -6,6 +6,7 @@ from pydantic import Field, ConfigDict
 from app.schemas.cliente_schemas import ClienteBase
 from app.schemas.servico_schemas import ServicoBase
 
+
 class AgendamentoBase(ScBaseModel):
     data_hora: datetime
     descricao: Optional[str] = None

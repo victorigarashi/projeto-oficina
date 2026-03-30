@@ -39,7 +39,7 @@ async def get_agendamentos_by_cliente(db: AsyncSession, cliente_id: int):
     result = await db.exec(statement)
     return result.all()
 
-#atualiza agendamnetos
+#atualiza agendamentos
 async def atualizar_agendamneto(db: AsyncSession, servico_id: int, dados: AgendamentoUpdate):
     agendamento = await db.get(AgendamentoModel, servico_id)
 

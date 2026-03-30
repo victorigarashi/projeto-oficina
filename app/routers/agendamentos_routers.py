@@ -15,7 +15,7 @@ router = APIRouter()
 async def post_agendamentos(agendamento: AgendamentoCreate, db: AsyncSession =  Depends(get_session)):
     return await agendamentos_services.criar_agendamento(db, agendamento)
 
-#get lista todos agendamnetos
+#get lista todos agendamnetos existentes
 @router.get('/', response_model=list[AgendamentoResponse])
 async def get_agendamento(db: AsyncSession = Depends(get_session)):
     return await agendamentos_services.listar_agendamentos(db)
